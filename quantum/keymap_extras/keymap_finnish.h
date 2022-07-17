@@ -98,7 +98,8 @@
 #define FI_AT   ALGR(FI_2)    // @
 #define FI_PND  ALGR(FI_3)    // £
 #define FI_DLR  ALGR(FI_4)    // $
-#define FI_EURO ALGR(FI_5)    // €
+// #define FI_EURO ALGR(FI_5)    // €
+#define FI_EURO ALGR(FI_E)
 #define FI_LCBR ALGR(FI_7)    // {
 #define FI_LBRC ALGR(FI_8)    // [
 #define FI_RBRC ALGR(FI_9)    // ]
