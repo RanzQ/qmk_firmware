@@ -168,9 +168,9 @@ bool oled_task_user(void) {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_BASE] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),       ENCODER_CCW_CW(KC_PGUP,  KC_PGDN) },
     [_CLMK] = { ENCODER_CCW_CW(_______,  _______),       ENCODER_CCW_CW(_______,  _______) },
-    [_SYM]  = { ENCODER_CCW_CW(_______,  _______),       ENCODER_CCW_CW(S(KC_TAB), KC_TAB) },
-    [_NAV]  = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(KC_Y)),  ENCODER_CCW_CW(_______,  _______) },
-    [_FUN]  = { ENCODER_CCW_CW(RGB_HUD,  RGB_HUI),       ENCODER_CCW_CW(RGB_RMOD, RGB_MOD) }
+    [_SYM]  = { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD),       ENCODER_CCW_CW(S(KC_TAB), KC_TAB) },
+    [_NAV]  = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(KC_Y)),  ENCODER_CCW_CW(RGB_SPD,  RGB_SPI) },
+    [_FUN]  = { ENCODER_CCW_CW(RGB_HUD,  RGB_HUI),       ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
 };
 #endif
 
