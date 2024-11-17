@@ -31,28 +31,6 @@ enum sofle_layers {
     _FUN
 };
 
-// enum combos {
-//   CB_ESC,
-//   CB_TAB,
-//   CB_BSPC,
-//   CB_ENT,
-//   CB_DEL,
-// };
-
-// const uint16_t PROGMEM combo_esc[]  = {KC_W, KC_E, COMBO_END};
-// const uint16_t PROGMEM combo_tab[]  = {KC_X, KC_C, COMBO_END};
-// const uint16_t PROGMEM combo_bspc[] = {KC_I, FI_O, COMBO_END};
-// const uint16_t PROGMEM combo_ent[]  = {FI_COMM, FI_DOT, COMBO_END};
-// const uint16_t PROGMEM combo_del[]  = {FI_DOT, FI_ADIA, COMBO_END};
-
-// combo_t key_combos[COMBO_COUNT] = {
-//   [CB_ESC]  = COMBO(combo_esc, KC_ESC),
-//   [CB_TAB]  = COMBO(combo_tab, KC_TAB),
-//   [CB_BSPC] = COMBO(combo_bspc, KC_BSPC),
-//   [CB_ENT]  = COMBO(combo_ent, KC_ENT),
-//   [CB_DEL]  = COMBO(combo_del, KC_DEL),
-// };
-
 #define MO_SYM  MO(_SYM)
 #define MO_NAV  MO(_NAV)
 #define TG_CLMK TG(_CLMK)
@@ -118,10 +96,6 @@ static const char PROGMEM qmk_logo[] = {
     128,128,128,128,192,224,240,255,255,240,240,255,255,240,240,255,255,240,240,255,255,240,240,255,255,240,224,192,128,128,128,128,153,153,153,153,255,255,255,255,255,  1,  1,255,255,255,255,  1,  1,255,255,255,255,  1,  1,255,255,255,255,255,153,153,153,153,153,153,153,153,255,255,255,255,255,252,240,243,227,231,231,  0,  0,231,231,227,243,240,252,255,255,255,255,255,153,153,153,153,  1,  1,  1,  1,  3,  7, 15,255,255, 15, 15,255,255, 15, 15,255,255, 15, 15,255,255, 15, 15,255,255, 15,  7,  3,  1,  1,  1,  1,
 };
 
-// static const char PROGMEM qmk_logo_alt[] = {
-//     128,128,128,128,192, 32, 16, 31, 31, 16, 16, 31, 31, 16, 16, 31, 31, 16, 16, 31, 31, 16, 16, 31, 31, 16, 32,192,128,128,128,128,153,153,153,153,255,  0,  0,  0,  0,254,254,  0,  0,  0,  0,254,254,  0,  0,  0,  0,254,254,  0,  0,  0,  0,255,153,153,153,153,153,153,153,153,255,  0,  0,  0,  0,  3, 15, 12, 28, 24, 24,255,255, 24, 24, 28, 12, 15,  3,  0,  0,  0,  0,255,153,153,153,153,  1,  1,  1,  1,  3,  4,  8,248,248,  8,  8,248,248,  8,  8,248,248,  8,  8,248,248,  8,  8,248,248,  8,  4,  3,  1,  1,  1,  1,
-// };
-
 static const char PROGMEM g_layer_qwrt[] = {
     0,248,  4,  2,  2,226, 18, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 18,226,  2,  2,  4,248,  0,  0,255,  0,  0,  0,255,  0,  0,  0,  0,  0,  0,252,254,  7,  3,  3,  7,254,252,  0,  0,  0,  0,  0,  0,255,  0,  0,  0,255,  0,  0,255,  0,  0,  0,127,128,  0,  0,  0,  0,  0,  3,  7, 14, 12, 12, 30, 63, 19,  0,  0,  0,  0,  0,128,127,  0,  0,  0,255,  0,  0, 31, 32, 64, 64, 64, 64, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 64, 64, 64, 64, 32, 31,  0,
 };
@@ -149,31 +123,6 @@ static void render_sofle_logo(void) {
 static void render_qmk_logo(void) {
     oled_write_raw_P(qmk_logo, sizeof(qmk_logo));
 }
-
-
-// static void render_status(void) {
-//     // Print current layer
-//     oled_write_ln_P(PSTR("LAYER"), false);
-//     switch (get_highest_layer(layer_state)) {
-//         case _BASE:
-//             oled_write_P(PSTR("BASE\n"), false);
-//             break;
-//         case _CLMK:
-//             oled_write_P(PSTR("CLMK\n"), false);
-//             break;
-//         case _NAV:
-//             oled_write_P(PSTR("NAV\n"), false);
-//             break;
-//         case _SYM:
-//             oled_write_P(PSTR("SYM\n"), false);
-//             break;
-//         case _FUN:
-//             oled_write_P(PSTR("FUN\n"), false);
-//             break;
-//         default:
-//             oled_write_ln_P(PSTR("???\n"), false);
-//     }
-// }
 
 static void render_status(void) {
     oled_write_ln_P(PSTR("\r"), false);
@@ -203,9 +152,7 @@ static void render_status(void) {
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (is_keyboard_master()) {
         return OLED_ROTATION_270;
-        // return OLED_ROTATION_180;
     }
-    //return OLED_ROTATION_270;
     return rotation;
 }
 
