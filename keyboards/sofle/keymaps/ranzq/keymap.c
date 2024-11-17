@@ -38,11 +38,11 @@ enum sofle_layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_BASE] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TG_CLMK,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX,
   XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    FI_ODIA, XXXXXXX,
   XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,       KC_MPLY, KC_N,    KC_M,    FI_COMM, FI_DOT,  FI_ADIA, XXXXXXX,
-                    KC_LGUI, KC_LALT, KC_LCTL, MO_SYM,  KC_SPC,        KC_LSFT, MO_NAV,  KC_RCTL, KC_RALT, KC_RGUI
+                    XXXXXXX, XXXXXXX, KC_LCTL, MO_SYM,  KC_SPC,        KC_LSFT, MO_NAV,  KC_RCTL, XXXXXXX, XXXXXXX
 ),
 
 [_CLMK] = LAYOUT(
@@ -63,17 +63,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_NAV] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_ESC,  FI_7,    FI_8,    FI_9,    XXXXXXX,                         XXXXXXX, KC_HOME, KC_UP,   KC_END,  KC_PGUP, _______,
-  _______, KC_TAB,  FI_4,    FI_5,    FI_6,    XXXXXXX,                         XXXXXXX, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______,
-  _______, FI_0,    FI_1,    FI_2,    FI_3,    XXXXXXX, _______,       _______, XXXXXXX, KC_BSPC, KC_ENT,  KC_DEL,  XXXXXXX, _______,
+  _______, KC_ESC,  FI_7,    FI_8,    FI_9,    OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_HOME, KC_UP,   KC_END,  KC_PGUP, _______,
+  _______, KC_TAB,  FI_4,    FI_5,    FI_6,    OSM(MOD_LALT),                   OSM(MOD_LALT), KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______,
+  _______, FI_0,    FI_1,    FI_2,    FI_3,    OSM(MOD_LCTL), _______, _______, OSM(MOD_LCTL), KC_BSPC, KC_ENT,  KC_DEL,  OSM(MOD_RGUI), _______,
                     _______, _______, _______, _______, KC_LSFT,       _______, _______, _______, _______, _______
 ),
 
 [_FUN] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_F10,  KC_F7,   KC_F8,   KC_F9,   XXXXXXX,                         XXXXXXX, KC_INS,  KC_PSCR, XXXXXXX, XXXXXXX, _______,
-  _______, KC_F11,  KC_F4,   KC_F5,   KC_F6,   XXXXXXX,                         XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, _______,
-  _______, KC_F12,  KC_F1,   KC_F2,   KC_F3,   XXXXXXX, _______,       RGB_TOG, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, _______,
+  _______, KC_F10,  KC_F7,   KC_F8,   KC_F9,   OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_INS,  KC_PSCR, XXXXXXX, XXXXXXX, _______,
+  _______, KC_F11,  KC_F4,   KC_F5,   KC_F6,   OSM(MOD_LALT),                   OSM(MOD_LALT), KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, _______,
+  _______, KC_F12,  KC_F1,   KC_F2,   KC_F3,   OSM(MOD_LCTL), TG_CLMK, RGB_TOG, OSM(MOD_LCTL), KC_VOLD, KC_MUTE, KC_VOLU, OSM(MOD_RGUI), _______,
                     _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 )
 };
