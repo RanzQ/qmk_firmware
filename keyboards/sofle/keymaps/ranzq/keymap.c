@@ -25,7 +25,7 @@
 
 enum sofle_layers {
     _BASE = 0,
-    _CLMK,
+    // _CLMK,
     _SYM,
     _NAV,
     _FUN
@@ -33,49 +33,85 @@ enum sofle_layers {
 
 #define MO_SYM  MO(_SYM)
 #define MO_NAV  MO(_NAV)
-#define TG_CLMK TG(_CLMK)
+// #define TG_CLMK TG(_CLMK)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+// _QWERTY from default
 [_BASE] = LAYOUT(
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX,
-  XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    FI_ODIA, XXXXXXX,
-  XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,       KC_MPLY, KC_N,    KC_M,    FI_COMM, FI_DOT,  FI_ADIA, XXXXXXX,
-                    XXXXXXX, XXXXXXX, KC_LCTL, MO_SYM,  KC_SPC,        KC_LSFT, MO_NAV,  KC_RCTL, XXXXXXX, XXXXXXX
+  KC_GRV,   KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV,
+  KC_ESC,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_BSPC,
+  KC_TAB,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT,
+  KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,     XXXXXXX,KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT,
+                 KC_LGUI,KC_LALT,KC_LCTL, MO_SYM, KC_ENT,      KC_SPC,  MO_NAV, KC_RCTL, KC_RALT, KC_RGUI
 ),
 
-[_CLMK] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                            KC_J,    KC_L,    KC_U,    KC_Y,    FI_ODIA, _______,
-  _______, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                            KC_M,    KC_N,    KC_E,    KC_I,    FI_O,    _______,
-  _______, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______,       _______, KC_K,    KC_H,    FI_COMM, FI_DOT,  FI_ADIA, _______,
-                    _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
-),
-
+// _LOWER from default
 [_SYM] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_ESC,  FI_PERC, FI_DLR,  FI_EURO, XXXXXXX,                         FI_CIRC, FI_TILD, FI_QUOT, FI_DQUO, FI_GRV,  _______,
-  _______, FI_LABK, FI_LCBR, FI_LBRC, FI_LPRN, FI_BSLS,                         FI_SLSH, FI_RPRN, FI_RBRC, FI_RCBR, FI_RABK, _______,
-  _______, FI_EXLM, FI_AT,   FI_HASH, FI_AMPR, FI_PIPE, _______,       _______, FI_ASTR, FI_MINS, FI_EQL,  FI_PLUS, FI_QUES, _______,
-                    _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+  _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,  KC_F11,
+  KC_GRV,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                       KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_F12,
+  _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                       KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_PIPE,
+  _______,  KC_EQL, KC_MINS, KC_PLUS, KC_LCBR, KC_RCBR, _______,       _______, KC_LBRC, KC_RBRC, KC_SCLN, KC_COLN, KC_BSLS, _______,
+                       _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
+// _RAISE from default
 [_NAV] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_ESC,  FI_7,    FI_8,    FI_9,    OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_HOME, KC_UP,   KC_END,  KC_PGUP, _______,
-  _______, KC_TAB,  FI_4,    FI_5,    FI_6,    OSM(MOD_LALT),                   OSM(MOD_LALT), KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______,
-  _______, FI_0,    FI_1,    FI_2,    FI_3,    OSM(MOD_LCTL), _______, _______, OSM(MOD_LCTL), KC_BSPC, KC_ENT,  KC_DEL,  OSM(MOD_RGUI), _______,
-                    _______, _______, _______, _______, KC_LSFT,       _______, _______, _______, _______, _______
+  _______, _______ , _______ , _______ , _______ , _______,                           _______,  _______  , _______,  _______ ,  _______ ,_______,
+  _______,  KC_INS,  KC_PSCR,   KC_APP,  XXXXXXX, XXXXXXX,                        KC_PGUP, C(KC_LEFT),   KC_UP, C(KC_RGHT),C(KC_BSPC), KC_BSPC,
+  _______, KC_LALT,  KC_LCTL,  KC_LSFT,  XXXXXXX, KC_CAPS,                       KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL, KC_BSPC,
+  _______, C(KC_Z), C(KC_X), C(KC_C), C(KC_V), XXXXXXX,  _______,       _______,  XXXXXXX, KC_HOME, XXXXXXX, KC_END,   XXXXXXX, _______,
+                         _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
+// _ADJUST from default
 [_FUN] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
-  _______, KC_F10,  KC_F7,   KC_F8,   KC_F9,   OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_INS,  KC_PSCR, XXXXXXX, XXXXXXX, _______,
-  _______, KC_F11,  KC_F4,   KC_F5,   KC_F6,   OSM(MOD_LALT),                   OSM(MOD_LALT), KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, _______,
-  _______, KC_F12,  KC_F1,   KC_F2,   KC_F3,   OSM(MOD_LCTL), TG_CLMK, RGB_TOG, OSM(MOD_LCTL), KC_VOLD, KC_MUTE, KC_VOLU, OSM(MOD_RGUI), _______,
-                    _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+  EE_CLR,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  QK_BOOT, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX,             C(G(KC_LEFT)),KC_NO,KC_NO,C(G(KC_RGHT)),XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX,XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX,XXXXXXX,     RGB_TOG, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
+                   _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______
 )
+
+// [_BASE] = LAYOUT(
+//   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+//   XXXXXXX, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    XXXXXXX,
+//   XXXXXXX, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                            KC_H,    KC_J,    KC_K,    KC_L,    FI_ODIA, XXXXXXX,
+//   XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_MUTE,       KC_MPLY, KC_N,    KC_M,    FI_COMM, FI_DOT,  FI_ADIA, XXXXXXX,
+//                     XXXXXXX, XXXXXXX, KC_LCTL, MO_SYM,  KC_SPC,        KC_LSFT, MO_NAV,  KC_RCTL, XXXXXXX, XXXXXXX
+// ),
+
+// [_CLMK] = LAYOUT(
+//   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
+//   _______, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                            KC_J,    KC_L,    KC_U,    KC_Y,    FI_ODIA, _______,
+//   _______, KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                            KC_M,    KC_N,    KC_E,    KC_I,    FI_O,    _______,
+//   _______, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    _______,       _______, KC_K,    KC_H,    FI_COMM, FI_DOT,  FI_ADIA, _______,
+//                     _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+// ),
+
+// [_SYM] = LAYOUT(
+//   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
+//   _______, KC_ESC,  FI_PERC, FI_DLR,  FI_EURO, XXXXXXX,                         FI_CIRC, FI_TILD, FI_QUOT, FI_DQUO, FI_GRV,  _______,
+//   _______, FI_LABK, FI_LCBR, FI_LBRC, FI_LPRN, FI_BSLS,                         FI_SLSH, FI_RPRN, FI_RBRC, FI_RCBR, FI_RABK, _______,
+//   _______, FI_EXLM, FI_AT,   FI_HASH, FI_AMPR, FI_PIPE, _______,       _______, FI_ASTR, FI_MINS, FI_EQL,  FI_PLUS, FI_QUES, _______,
+//                     _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+// ),
+
+// [_NAV] = LAYOUT(
+//   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
+//   _______, KC_ESC,  FI_7,    FI_8,    FI_9,    OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_HOME, KC_UP,   KC_END,  KC_PGUP, _______,
+//   _______, KC_TAB,  FI_4,    FI_5,    FI_6,    OSM(MOD_LALT),                   OSM(MOD_LALT), KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, _______,
+//   _______, FI_0,    FI_1,    FI_2,    FI_3,    OSM(MOD_LCTL), _______, _______, OSM(MOD_LCTL), KC_BSPC, KC_ENT,  KC_DEL,  OSM(MOD_RGUI), _______,
+//                     _______, _______, _______, _______, KC_LSFT,       _______, _______, _______, _______, _______
+// ),
+
+// [_FUN] = LAYOUT(
+//   _______, _______, _______, _______, _______, _______,                         _______, _______, _______, _______, _______, _______,
+//   _______, KC_F10,  KC_F7,   KC_F8,   KC_F9,   OSM(MOD_LGUI),                   OSM(MOD_LGUI), KC_INS,  KC_PSCR, XXXXXXX, XXXXXXX, _______,
+//   _______, KC_F11,  KC_F4,   KC_F5,   KC_F6,   OSM(MOD_LALT),                   OSM(MOD_LALT), KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, _______,
+//   _______, KC_F12,  KC_F1,   KC_F2,   KC_F3,   OSM(MOD_LCTL), TG_CLMK, RGB_TOG, OSM(MOD_LCTL), KC_VOLD, KC_MUTE, KC_VOLU, OSM(MOD_RGUI), _______,
+//                     _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+// )
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -132,9 +168,9 @@ static void render_status(void) {
         case _BASE:
             oled_write_raw_P(g_layer_qwrt, sizeof(g_layer_qwrt));
             break;
-        case _CLMK:
-            oled_write_raw_P(g_layer_clmk, sizeof(g_layer_clmk));
-            break;
+        // case _CLMK:
+        //     oled_write_raw_P(g_layer_clmk, sizeof(g_layer_clmk));
+        //     break;
         case _NAV:
             oled_write_raw_P(g_layer_nav, sizeof(g_layer_nav));
             break;
@@ -172,7 +208,7 @@ bool oled_task_user(void) {
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [_BASE] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU),       ENCODER_CCW_CW(KC_PGUP,  KC_PGDN) },
-    [_CLMK] = { ENCODER_CCW_CW(_______,  _______),       ENCODER_CCW_CW(_______,  _______) },
+    // [_CLMK] = { ENCODER_CCW_CW(_______,  _______),       ENCODER_CCW_CW(_______,  _______) },
     [_SYM]  = { ENCODER_CCW_CW(RGB_RMOD, RGB_MOD),       ENCODER_CCW_CW(S(KC_TAB), KC_TAB) },
     [_NAV]  = { ENCODER_CCW_CW(LCTL(KC_Z), LCTL(KC_Y)),  ENCODER_CCW_CW(RGB_SPD,  RGB_SPI) },
     [_FUN]  = { ENCODER_CCW_CW(RGB_HUD,  RGB_HUI),       ENCODER_CCW_CW(RGB_VAD, RGB_VAI) }
