@@ -29,12 +29,12 @@
                  "KC_ESC",  "FI_7",    "FI_8",    "FI_9",    "OSM(MOD_LGUI)",                       "OSM(MOD_LGUI)", "KC_HOME", "KC_UP",   "KC_END",  "KC_PGUP",
       "_______", "KC_TAB",  "FI_4",    "FI_5",    "FI_6",    "OSM(MOD_LALT)",                       "OSM(MOD_LALT)", "KC_LEFT", "KC_DOWN", "KC_RGHT", "KC_PGDN", "_______",
       "_______", "FI_0",    "FI_1",    "FI_2",    "FI_3",    "OSM(MOD_LCTL)", "_______", "_______", "OSM(MOD_LCTL)", "KC_BSPC", "KC_ENT",  "KC_DEL",  "OSM(MOD_RGUI)", "_______",
-                                       "_______", "_______", "_______", "_______", "_______", "_______", "_______", "_______"
+                                       "_______", "_______", "KC_LSFT", "_______", "_______", "_______", "_______", "_______"
     ],
     [
-                 "KC_F10",  "KC_F7",   "KC_F8",   "KC_F9",   "OSM(MOD_LGUI)",                       "OSM(MOD_LGUI)", "KC_INS",  "KC_PSCR", "XXXXXXX", "XXXXXXX",
-      "_______", "KC_F11",  "KC_F4",   "KC_F5",   "KC_F6",   "OSM(MOD_LALT)",                       "OSM(MOD_LALT)", "KC_MPRV", "KC_MPLY", "KC_MNXT", "XXXXXXX", "_______",
-      "_______", "KC_F12",  "KC_F1",   "KC_F2",   "KC_F3",   "OSM(MOD_LCTL)", "TG(1)",   "RGB_TOG", "OSM(MOD_LCTL)", "KC_VOLD", "KC_MUTE", "KC_VOLU", "OSM(MOD_RGUI)", "_______",
+                 "KC_F10",  "KC_F7",   "KC_F8",   "KC_F9",   "OSM(MOD_LGUI)",                       "OSM(MOD_LGUI)", "KC_INS",  "G(A(KC_UP))",   "KC_PSCR", "XXXXXXX",
+      "_______", "KC_F11",  "KC_F4",   "KC_F5",   "KC_F6",   "OSM(MOD_LALT)",                       "OSM(MOD_LALT)", "G(A(KC_LEFT))", "G(A(KC_DOWN))", "G(A(KC_RGHT))", "XXXXXXX", "_______",
+      "_______", "KC_F12",  "KC_F1",   "KC_F2",   "KC_F3",   "OSM(MOD_LCTL)", "TG(1)",   "RGB_TOG", "OSM(MOD_LCTL)", "KC_MPRV", "KC_MPLY", "KC_MNXT", "OSM(MOD_RGUI)", "_______",
                                        "_______", "_______", "_______", "_______", "_______", "_______", "_______", "_______"
     ]
   ],
